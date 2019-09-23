@@ -1,0 +1,54 @@
+	{{ include('/header.html') }}
+	<section id="wrapper" class="d-flex">
+		<div id="wrapbody" class="container-fluid align-items-center">
+			<div class="row content flex-row p-0 m-0 no-gutters float-left">
+				<div class="col-12 p-5">
+					<h1>Регистрация</h1>
+					<form action="" method="POST">
+						<div class="form-group">
+							<label for="formGroupExampleInput">Имя</label>
+							<input type="text" class="form-control" id="formGroupExampleInput" placeholder="Ваше имя">
+						</div>
+						<div class="form-group">
+							<label for="formGroupExampleInput2">Фамилия</label>
+							<input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Ваша фамилия">
+						</div>
+					  <div class="form-group">
+						<label for="exampleInputEmail1">Email</label>
+						<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ваш адрес электронной почты email">
+					  </div>
+						<label for="exampleFormControlSelect1">Телефон</label>
+						<div class="input-group mb-1">
+						  <div class="input-group-prepend">
+						  <div class="form-group">
+							<select class="form-control" id="exampleFormControlSelect1">
+							  <option selected>+7</option>
+							  <option>+00</option>
+							  <option>+000</option>
+							</select>
+						  </div>
+						  </div>
+						  <input type="text" class="form-control" placeholder="Ваш номер телефона">
+						</div>
+					  <div class="form-group">
+						<label for="exampleInputPassword1">Пароль</label>
+						<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Придумайте пароль">
+					  </div>
+					  <div class="form-group">
+						<label for="exampleInputPassword1">Подтверждение Пароля</label>
+						<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Повтрорите пароль">
+					  </div>
+						<button type="submit" class="btn btn-primary">Регистрация</button>
+					</form>
+				</div>
+				<div class="col-12 p-2">
+					2 row
+				</div>
+				<div class="col-12">6</div>
+			</div>
+			<div class="row sidebar flex-row p-0 m-0 no-gutters float-right">
+				{{ include('/sidebar.html') }}
+			</div>
+		</div>
+	</section>
+	{{ include('/footer.html') }}

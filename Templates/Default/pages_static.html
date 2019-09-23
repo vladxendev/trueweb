@@ -1,0 +1,19 @@
+	{{ include('/header.html') }}
+	<section id="wrapper" class="d-flex">
+		<div id="wrapbody" class="container-fluid align-items-center">
+			<div class="row content flex-row p-0 m-0 no-gutters float-left">
+				<div class="col-12 p-2">
+					<h1>{{ page.title }}</h1>
+					<p>{{ page.content }}</p>
+				</div>
+				<div class="col-12 p-2">
+					<pre>Дата публикации: {{ page.create_at }}</pre>
+				</div>
+				<div class="col-12">6</div>
+			</div>
+			<div class="row sidebar flex-row p-0 m-0 no-gutters float-right">
+				{{ include('/sidebar.html') }}
+			</div>
+		</div>
+	</section>
+	{{ include('/footer.html') }}

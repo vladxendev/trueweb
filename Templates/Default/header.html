@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="{{ description }}" />
+	<meta name="keywords" content="{{ keywords }}" />
+	<meta name="generator" content="" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="author" content="Владислав Середняков">
+	<meta name="copyright" content="Все права принадлежат TrueWeb.Dev">
+	<meta name="yandex-verification" content="872d964547608718" />
+    <!-- Main Style CSS -->
+	<link rel="stylesheet" type="text/css" href="{{ tplpath }}/css/style.css" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ tplpath }}/css/bootstrap.css">
+	<!-- Material Design icons by Google -->
+	<link href="{{ tplpath }}/css/material-icons.css" rel="stylesheet">
+	<link rel="icon" href="/favicon.ico">
+<!-- include summernote css/js -->
+    <script src="/Templates/Default/js/jquery-3.4.1.slim.min.js"></script>
+    <script src="/Templates/Default/js/popper.min.js"></script>
+	<script src="/Templates/Default/js/bootstrap.min.js"></script>
+	<link href="/Templates/Default/plugin/databasic/summernote-ext-databasic.css" rel="stylesheet">
+	<script src="/Templates/Default/plugin/databasic/summernote-ext-databasic.js"></script>
+	<script src="/Templates/Default/plugin/specialchars/summernote-ext-specialchars.js"></script>
+	<script src="/Templates/Default/plugin/hello/summernote-ext-hello.js"></script>
+    <script src="/Templates/Default/js/bootstrap.min.js"></script>
+	<link href="/Templates/Default/css/summernote-bs4.css" rel="stylesheet">
+	<script src="/Templates/Default/js/summernote-bs4.js"></script>
+	<script src="/Templates/Default/lang/summernote-ru-RU.js"></script>
+    <title>{{ pagetitle }}</title>
+  </head>
+  <body>
+	<!-- section>container>row -->
+	<header id="header" class="d-flex">
+		<div class="container-fluid p-0">
+			<div class="row htopnav flex-row p-0 m-0 no-gutters">
+				<div class="col-6">
+					<nav class="navbar navbar-expand-lg navbar-dark">
+						<a class="navbar-brand" href="#">TrueWeb</a>
+						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+						  <span class="navbar-toggler-icon"></span>
+						</button>
+
+						<div class="collapse navbar-collapse" id="navbarColor01">
+						  <ul class="navbar-nav mr-auto">
+							<li class="nav-item active">
+							  <a class="nav-link" href="#">Главная <span class="sr-only">(current)</span></a>
+							</li>
+							<li class="nav-item">
+							  <a class="nav-link" href="#">Портфолио</a>
+							</li>
+							<li class="nav-item">
+							  <a class="nav-link" href="#">Услуги</a>
+							</li>
+							<li class="nav-item">
+							  <a class="nav-link" href="#">О нас</a>
+							</li>
+						  </ul>
+						</div>
+					</nav>
+				</div>
+				<div class="col-6">
+					<div class="htopubar float-right">
+						<ul>
+							<li class="rounded"><a href="/user/register"><i class="material-icons">person_add</i>Регистрация</a></li>
+							<li class="rounded"><a href="/user/login"><i class="material-icons">account_box</i>Авторизация</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="row htophead flex-row p-0 m-0 no-gutters">
+				<div class="col-6">
+					<img src="/Templates/Default/img/twd-logo.png" alt="Professional Web Development">
+				</div>
+				<div class="col-6"><i class="material-icons">dashboard</i></div>
+			</div>
+			<div class="row encapsulation flex-row p-0 m-0 no-gutters">
+				<div class="col-6">
+					<nav aria-label="breadcrumb">
+					  <ol id="pagedirlink" class="breadcrumb">
+					  {% for item in breadcrumb %}
+						{% if loop.index != loop.last %}
+						  <li class="breadcrumb-item"><a href="{{ item.url }}">{{ item.urlname }}</a></li>
+						{% endif %}
+						{% if loop.index == loop.last %}
+						  <li class="breadcrumb-item active" aria-current="page">{{ item.urlname }}</li>
+						{% endif %}
+					  {% endfor %}
+					  </ol>
+					</nav>
+				</div>
+				<div class="col-6">
+					<form class="form-inline my-2 my-lg-0 htopsearch">
+					  <input id="htopsearchinput" class="form-control mr-sm-2" type="search" placeholder="Поиск по сайту" aria-label="Search">
+					  <button class="btn btn-light my-2 my-sm-0" type="submit">Поиск</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</header>

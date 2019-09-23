@@ -1,0 +1,82 @@
+	{{ include('/header.html') }}
+	<section id="wrapper" class="d-flex">
+		<div id="wrapbody" class="container-fluid align-items-center">
+			<div class="row content flex-row p-0 m-0 no-gutters float-left">
+				<div class="col-12">
+					<div id="carouselExampleIndicators" class="carslider carousel slide" data-ride="carousel">
+					  <ol class="carousel-indicators">
+						<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+						<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+						<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+					  </ol>
+					  <div class="carousel-inner rounded">
+						<div class="carousel-item active">
+						  <img class="d-block w-100" src="/Uploads/carousel.jpg" alt="First slide">
+						  <div class="carousel-caption d-none d-md-block">
+							<h5>Trueweb</h5>
+							<p>TrueWeb.Dev - Web Development</p>
+						  </div>
+						</div>
+						<div class="carousel-item">
+						  <img class="d-block w-100" src="/Uploads/carousel.jpg" alt="Second slide">
+						  <div class="carousel-caption d-none d-md-block">
+							<h5>Trueweb</h5>
+							<p>TrueWeb.Dev - Web Development</p>
+						  </div>
+						</div>	
+						<div class="carousel-item">
+						  <img class="d-block w-100" src="/Uploads/carousel.jpg" alt="...">
+						  <div class="carousel-caption d-none d-md-block">
+							<h5>Trueweb</h5>
+							<p>TrueWeb.Dev - Web Development</p>
+						  </div>
+						</div>
+					  </div>
+					  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="sr-only">Previous</span>
+					  </a>
+					  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="sr-only">Next</span>
+					  </a>
+					</div>
+				</div>
+				<div class="col-12 p-2">
+					{% for article in articles %}
+					<div class="card text-center newbox">
+					  <div class="card-header">
+						<h5 class="card-title float-left"><a href="/articles/post/{{ article.id }}/" class="text-dark navbar-brand float-left">{{ article.title }}</a></h5>
+						<pre class="text-muted float-right"> {{ article.create_at }}</pre>
+						<i id="newboxdate-icon" class=" float-right material-icons">date_range</i>
+					  </div>
+					  <div class="card-body">
+						<p class="card-text">{{ article.preview|raw }}</p>
+					  </div>
+					  <div class="card-footer text-muted">
+						<a class="btn btn-secondary float-right" href="/articles/post/{{ article.id }}/" role="button">Читать дальше</a>
+					  </div>
+					</div>
+					{% endfor %}
+					<nav aria-label="...">
+					  <ul class="pagination">
+						<li class="page-item"><a class="page-link" href="/articles/page/{{ firstpage }}">Первая страница</a></li>
+						{% for page in pagination %}
+						{% if loop.index == currpage %}
+						<li class="page-item active"><span class="page-link">{{ loop.index }}<span class="sr-only">(current)</span></span></li>
+						{% else %}
+						<li class="page-item"><a class="page-link" href="/articles/page/{{ loop.index }}">{{ loop.index }}</a></li>
+						{% endif %}
+						{% endfor %}
+						<li class="page-item"><a class="page-link" href="/articles/page/{{ lastpage }}">Последняя страница</a></li>
+					  </ul>
+					</nav>
+				</div>
+				<div class="col-12">.</div>
+			</div>
+			<div class="row sidebar flex-row p-0 m-0 no-gutters float-right">
+				{{ include('/sidebar.html') }}
+			</div>
+		</div>
+	</section>
+	{{ include('/footer.html') }}

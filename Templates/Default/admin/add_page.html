@@ -1,0 +1,74 @@
+	{{ include('/admin/header.html') }}
+	{{ include('/admin/sidebar.html') }}
+      <div class="container-fluid">
+
+        <!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="/admin/">Панель</a>
+          </li>
+          <li class="breadcrumb-item active">Страницы</li>
+        </ol>
+
+        <div class="card mb-3">
+          <div class="card-header">
+            <i class="fas fa-paste"></i>
+            Добавление статической страницы</div>
+          <div class="card-body">
+			<form action="" method="post">
+			  <div class="form-group">
+				<label for="pagesTitle">Заголовок страницы</label>
+				<input type="text" class="form-control" id="pagesTitle" name="pagesTitle" placeholder="Заголовок страницы">
+			  </div>
+			  <!--<div class="form-group">
+				<label for="articleCategory">Категория</label>
+				<select class="form-control" id="articleCategory" name="articleCategory">
+				  <option value="1">Разработка</option>
+				  <option value="2">Администратирование</option>
+				</select>
+			  </div>-->
+			  <div class="form-group">
+				<label for="pagesContent">Содержание страницы</label>
+				<textarea id="pagesContent" name="pagesContent"></textarea>
+				<!--<div id="summernote"></div>-->
+				<script type="text/javascript">
+					$('#pagesContent').summernote({
+						placeholder: 'Содержание статьи',
+						tabsize: 2,
+						height: 200,
+						lang: 'ru-RU'
+					});
+					$(document).ready(function() {
+						$('#pagesContent').summernote();
+					});
+				</script>
+			  </div>
+			  <!--<div class="form-group">
+				<label for="articleTags">Теги</label>
+				<input type="text" class="form-control" id="articleTags" name="articleTags" placeholder="Ключевые слова для облака тегов(укажите через запятую)">
+			  </div>-->
+			  <div class="form-group">
+				<label for="pagesDescription">SEO Описание</label>
+				<input type="text" class="form-control" id="pagesDescription" name="pagesDescription" placeholder="Описание страницы для поисковых систем">
+			  </div>
+			  <div class="form-group">
+				<label for="pagesKeywords">SEO Ключевые слова</label>
+				<input type="text" class="form-control" id="pagesKeywords" name="pagesKeywords" placeholder="Ключевые слова для поисковых систем">
+			  </div>
+			  <div class="form-group">
+				<label for="pagesUri">ЧПУ URL страницы</label>
+				<input type="text" class="form-control" id="pagesUri" name="pagesUri" placeholder="URL в формате example-article-new">
+			  </div>
+				<!--<div class="custom-file mb-3">
+					<input type="file" class="custom-file-input" id="customFile" name="articleFiles[]">
+					<label class="custom-file-label" for="customFile">Загрузка файла(вложения)</label>
+				</div>-->
+			  <button type="submit" class="btn btn-primary" name="sendPage" value="add">Добавить страницу</button>
+			</form>
+          </div>
+          <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+        </div>
+
+      </div>
+      <!-- /.container-fluid -->
+	{{ include('/admin/footer.html') }}
